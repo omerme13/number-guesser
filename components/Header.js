@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     headerTitle: {
         fontSize: 18,
         color: 'white',
-        marginTop: 25
+        marginTop: 25,
+        fontFamily: 'open-sans-bold'
     } 
 });
 

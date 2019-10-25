@@ -12,6 +12,9 @@ import {
 import Card from "../Card";
 import Input from "../Input";
 import NumberContainer from "../NumberContainer";
+import StyledText from '../StyledText';
+import StyledButton from '../StyledButton';
+
 
 import { colors } from "../../variables";
 
@@ -52,7 +55,10 @@ const startGame = props => {
                 <NumberContainer>
                     {selectedNum}
                 </NumberContainer>
-                <Button title="START GAME" onPress={() => props.start(selectedNum)} />
+                <StyledButton 
+                    title="start game" 
+                    onPress={() => props.start(selectedNum)} 
+                />
             </Card>
         ) 
         : null;
@@ -60,9 +66,9 @@ const startGame = props => {
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
             <View style={styles.screen}>
-                <Text style={styles.title}>Start a new game!</Text>
+                <StyledText type="title">Start a new game!</StyledText>
                 <Card style={styles.inputContainer}>
-                    <Text>Select a number</Text>
+                    <StyledText type="body">Select a number</StyledText>
                     <Input
                         style={styles.input}
                         maxLength={2}
@@ -99,10 +105,6 @@ const styles = StyleSheet.create({
         padding: 10,
         alignItems: "center"
     },
-    title: {
-        fontSize: 20,
-        marginVertical: 10
-    },
     inputContainer: {
         width: 300,
         maxWidth: "70%"
@@ -120,6 +122,9 @@ const styles = StyleSheet.create({
     confirmedOutput: {
         marginVertical: 20
     },
+    containerText: {
+        fontFamily: 'open-sans'
+    }
 
 });
 
